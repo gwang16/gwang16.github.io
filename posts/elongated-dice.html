@@ -72,7 +72,7 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
                         <h1>Elongated Dice</h1>
-                        <h2 class="subheading">What's the probability of landing on a 1 or a 6 for an elongated dice?</h2>
+                        <h2 class="subheading">What's the probability of landing on a 1 or a 6?</h2>
                         <span class="meta">Posted on January 15, 2016</span>
                     </div>
                 </div>
@@ -85,7 +85,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <p>I came across a very interesting problem in a <a href="http://datascopeanalytics.com/blog/from-coins-to-rods-properties-of-elongated-dice/"> blog post</a> by Datascope Analytics. Given a fair six sided dice, the probability of rolling a 1 or a 6 is 1/3. But what happens to this probability if the length and width of the dice remain the same, but the height changes to some number h?</p>
+                    <p>I came across a very interesting problem in a <a href="http://datascopeanalytics.com/blog/from-coins-to-rods-properties-of-elongated-dice/"> blog post</a> by Datascope Analytics. Given a fair six sided die, the probability of rolling a 1 or a 6 is pretty straight forward (1/3). Now we change the dice a little. First, note that the opposite ends of a die always adds up to 7, so that if it lands with 6 facing up, then 1 must be on the bottom. Imagine a die rested in this position, but its height changes in such a way that the area of the 1 and 6 faces stay the same, but that of the remaining 4 faces of 2, 3, 4 and 5 increases or decreases depending on how the height of the dice changes. Now, what is the probability of landing on a 1 or 6 for this new dice? </p>
+                    <p>We know that if the height increases, then p(1 or 6) should decrease, because the relative surface area of the remaining 4 faces increases. Vice versa, if the height decreases, we expect p(1 or 6) to decrease. The question is, can we come up with a closed form solution to represent p(1 or 6)?</p>
                     <p> 
                     <a href="../documents/dice_solution.pdf">Here</a> is my proposed solution.
                     </p>

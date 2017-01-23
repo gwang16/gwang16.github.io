@@ -85,26 +85,29 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <p>The pick-ban phase in League of Legends has always been an interesting mini-game. Given the 100+ champion pool (though not all are competitively viable), the vast combinations of team composition provides a dynamic and challenging phase of the game. As the game moves to a 10-champion ban mode, the complexity of the problem also increases. The purpose of this exercise is to attempt to facilitate the decision making process behind the pick-ban phase using statistics.</p>
+                    <p>The pick-ban phase in League of Legends has always been an interesting mini-game. Given a 100+ champion pool, the vast combination of team composition provides a dynamic and challenging phase of the game. As the LoL moves to a 10-champion ban mode in the future, the complexity of the problem also increases. The purpose of this exercise is to attempt to facilitate the decision making process behind the pick-ban phase using statistics.</p>
 
-                    <p><a href="http://gwang16.ocpu.io/PickBan/www">Demo</a> can be found here.</p>
-                    <h2 class="section-heading">Sample Output</h2>
                     
+                    <h2 class="section-heading">Demo</h2>
+                    <p><a href="http://gwang16.ocpu.io/PickBan/www">Demo</a> and additional details can be found here.</p>
                     
                     <img class="img-responsive" src="../img/pick-ban-demo.jpg" alt="">
                     
                     <span class="caption text-muted">When the opponent team first picks Ryze, we should consider playing a team comp with Vi or Wukong.</span>
 
                     <h2 class="section-heading">Data</h2>
-                    <p>Game history data obtained from Riot API.
+                    <p>In the current build, historical data consists of 10,000 games obtained from Riot API as of patch 5.13. I'm in the process of updating this process so that the model automatically recalibrates with the latest data every month. Ideally, the model should be able to filter by different game modes, player ranks, game time, and other attributes.
+
+                    <blockquote>In building a model, data takes up 80% of the time, but gets 20% of the fame.</blockquote>
 
                     <h2 class="section-heading">Methodology</h2>
 
-                    <p>The general methodology used in rank ordering champions is as follows. 1) Filter out the entire data set so that it includes all games (identified by gameid) that includes the champions that have been picked by the two teams. 2) Filter out games that includes all opponent champions on one team, and all friendly champions on the opposite team. 3) Calculate win rate per champion in the filtered data set.</p>
-
-                    <blockquote>Data takes up about 80% of the time in building a model, but gets 20% of the credit.</blockquote>
-
-
+                    <p>The general methodology used in rank ordering champions is as follows. </p>
+                    <ol>
+                      <li>Filter the data set so that it includes all games (identified by gameid) with champions that have been picked by the two teams.</li>
+                      <li>Filter the data set so that it includes all opponent champions on one team, and all friendly champions on the opposite team.</li>
+                      <li>Calculate win rate per champion in the filtered data set.</li>
+                    </ol>
 
                 </div>
             </div>

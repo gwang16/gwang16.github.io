@@ -1,9 +1,8 @@
 
 target_selection <- function(T){
-x<- sample(1:length(T),1,replace=TRUE)
-return(x)
+  x<- sample(1:length(T),1,replace=TRUE)
+  return(x)
 }
-
 
 damage_selection <- function(type){
   if (type=="bomb"){
