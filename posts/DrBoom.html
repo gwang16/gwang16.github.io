@@ -9,16 +9,16 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>About Me</title>
+    <title>Pick-Ban</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link href="../css/clean-blog.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -42,20 +42,20 @@
                     <span class="sr-only">Toggle navigation</span>
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.html">George's Blog</a>
+                <a class="navbar-brand" href="../index.html">George's Blog</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="../index.html">Home</a>
                     </li>
                     <li>
-                        <a href="about.html">About</a>
+                        <a href="../about.html">About</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a href="../contact.html">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -66,30 +66,48 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/stormwind.jpg')">
+    <header class="intro-header" style="background-image: url('../img/DrBoom2.jpg');">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="page-heading">
-                        <h1>About Me</h1>
-                        <hr class="small">
-                        <span class="subheading">Data Scientist. Consultant. Gamer.</span>
+                    <div class="post-heading"  style = "color: #2B547E">
+                        <h1>Dr. Boom</h1>
+                        <h2 class="subheading">Probability of an unlikely scenario</h2>
+                        <span class="meta">Posted on January 24, 2017</span>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>The primarily motivation behind making this blog is to 1) practice html, javascript, and css, and 2) share my analysis with the general public in order to improve my coding skills, analytical thinking, and gaming related knowledge.</p>
-                <p>I currently work as a Data Scientist in a FinTech firm in New York. Prior to this I spent 3 years in quantitative consulting in financial services, where I developed experience working with statistics, machine learning, risk management, and derivatives pricing. My education background is in mathetmatics, economics, and financial engineering. 
-                <p>I spend my free time working on analytics related side projects, swimming, and gaming. A list of titles that I currently enjoy playing or watching: Heroes of the Storm, Hearthstone, Overwatch, and League of Legends. </p>
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <P>As I was watching Amaz's stream on Twitch recently, several extremely rare events happened. I began to wonder what would be the most unlikely scenario that I could imagine, and exactly how unlikely it would be. So here it is.</P>
+
+                    <h2 class="section-heading">Scenario</h2>
+                    <p>Imagine the following scenario. You're going first as mage versus warlock. It's turn 7, you flamestrike to reset the board. You feel pretty smug, with an arcane missles left in your hand and are up 10 HP to your opponent's 4. Missles plus ping would be lethal if your opponent doesn't draw into something good. Your opponent draws, emotes "Greetings", and slams down Dr. Boom, a 7/7 creature that summons two 1/1s, each of which also has deathrattles that deal 1-4 random damage to a random enemy character. End turn.</p>
+
+                    <p>Neverlucky. You right click his face and mute him. Turn 8. Draw. Your very own Dr. Boom! You stare at your hand and face a  decision: do you play arcane missles plus ping and hope that all missles hit face, or play Dr. Boom and missles and hope that the missles hit your opponents bomb which then hits your bomb which then hits his face? Instinctively, the expected damage from the bombs should be higher than the guaranteed 1 damage from the ping. But is this correct? What are the actual probabilities?</p>
+
+                    <h2 class="section-heading">Question</h2>
+                    <p>The probability of winning this turn with missles + ping is 1.56% (=1/4^3), which is the event that all three missles hit face. Then, what is the probability of dealing 4 damage to the oppponent's face when both of your boards consist of Dr. Boom, and you play arcane missles?</p>
+
+                    <h2 class="section-heading">My Solution</h2>
+                    <p>There may exist a closed form solution to this problem, but we employ a Monte Carlo simulation method for its relative simplicity and accuracy.</p>
+                    
+                    <p>My proposed solution for the probability of winning by playing Dr. Boom and Arcane Missles is 10.3%. This is substantially higher than attempting to win with Arcane Missles + ping (1.56%). </p>
+
+                    <h2 class="section-heading">Code</h2>
+                    <p>Details to the <a href="https://github.com/gwang16/DrBoom">simulation code</a> can be found here.</p>
+                    
+
+                </div>
             </div>
         </div>
-    </div>
+    </article>
 
     <hr>
 
@@ -139,17 +157,17 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
+    <script src="../js/jqBootstrapValidation.js"></script>
+    <script src="../js/contact_me.js"></script>
 
     <!-- Theme JavaScript -->
-    <script src="js/clean-blog.min.js"></script>
+    <script src="../js/clean-blog.min.js"></script>
 
 </body>
 
