@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Pick-Ban</title>
+    <title>Dr.Boom</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -21,6 +21,8 @@
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <link href="../css/my_css.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -66,11 +68,11 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('../img/DrBoom2.jpg');">
+    <header class="intro-header" style="background-image: url('../img/HS.jpg');">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="post-heading"  style = "color: #2B547E">
+                    <div class="post-heading">
                         <h1>Dr. Boom</h1>
                         <h2 class="subheading">Probability of an unlikely scenario</h2>
                         <span class="meta">Posted on January 24, 2017</span>
@@ -85,20 +87,72 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <P>As I was watching Amaz's stream on Twitch recently, several extremely rare events happened. I began to wonder what would be the most unlikely scenario that I could imagine, and exactly how unlikely it would be. So here it is.</P>
+                    <P>As I was watching Amaz's stream on Twitch recently, several extremely improbable events happened. I began imagining crazy scenarios in my head, and ended up doing some Monte Carlo simulation to determine their exact probability of occuring. Here's one of my favorite.</P>
 
                     <h2 class="section-heading">Scenario</h2>
                     <p>Imagine the following scenario. You're going first as mage versus warlock. It's turn 7, you flamestrike to reset the board. You feel pretty smug, with an arcane missles left in your hand and are up 10 HP to your opponent's 4. Missles plus ping would be lethal if your opponent doesn't draw into something good. Your opponent draws, emotes "Greetings", and slams down Dr. Boom, a 7/7 creature that summons two 1/1s, each of which also has deathrattles that deal 1-4 random damage to a random enemy character. End turn.</p>
 
-                    <p>Neverlucky. You right click his face and mute him. Turn 8. Draw. Your very own Dr. Boom! You stare at your hand and face a  decision: do you play arcane missles plus ping and hope that all missles hit face, or play Dr. Boom and missles and hope that the missles hit your opponents bomb which then hits your bomb which then hits his face? Instinctively, the expected damage from the bombs should be higher than the guaranteed 1 damage from the ping. But is this correct? What are the actual probabilities?</p>
+                    <p>Neverlucky. You right click his face and mute him. Turn 8. Draw. Your very own Dr. Boom! You stare at your hand and face a  decision: do you play arcane missles plus ping and hope that all missles hit face, or play both Dr. Boom and arcane missles and hope that the missles hit your opponent's bomb which then hits your bomb which then hits his face? Instinctively, the expected damage from the bombs could be higher than the guaranteed 1 damage from the ping. But is this correct? What are the actual probabilities?</p>
 
                     <h2 class="section-heading">Question</h2>
-                    <p>The probability of winning this turn with missles + ping is 1.56% (=1/4^3), which is the event that all three missles hit face. Then, what is the probability of dealing 4 damage to the oppponent's face when both of your boards consist of Dr. Boom, and you play arcane missles?</p>
+                    <p>The probability of winning this turn with missles + ping is 1.56% (=1/4^3), which is the event that all three missles hit face. Then, what is the probability of dealing at least 4 damage to the oppponent's face when both of your boards consist of Dr. Boom, and you play arcane missles?</p>
 
                     <h2 class="section-heading">My Solution</h2>
                     <p>There may exist a closed form solution to this problem, but we employ a Monte Carlo simulation method for its relative simplicity and accuracy.</p>
-                    
-                    <p>My proposed solution for the probability of winning by playing Dr. Boom and Arcane Missles is 10.3%. This is substantially higher than attempting to win with Arcane Missles + ping (1.56%). </p>
+                    <p>My proposed solution for the probability of winning by playing Dr. Boom + Arcane Missles is 10.3%. This is substantially higher than attempting to win with Arcane Missles + ping (1.56%).</p>
+                    <p>The table below lists the discrete probability distribution of the damage to opponent following the Dr. Boom play + Arcane Missles play.</p>
+
+
+                      <table class="table-striped">
+                        <thead>
+                          <tr>
+                            <th>Damage</th>
+                            <th>Probability</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>0</td>
+                            <td>22.69%</td>
+                          </tr>
+                          <tr>
+                            <td>1</td>
+                            <td>39.44%</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>20.3%</td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>7.27%</td>
+                          </tr>
+                          <tr>
+                            <td>4</td>
+                            <td>5.53%</td>
+                          </tr>
+                          <tr>
+                            <td>5</td>
+                            <td>3.58%</td>
+                          </tr>
+                          <tr>
+                            <td>6</td>
+                            <td>0.95%</td>
+                          </tr>
+                          <tr>
+                            <td>7</td>
+                            <td>0.05%</td>
+                          </tr>
+                          <tr>
+                            <td>8</td>
+                            <td>0.16%</td>
+                          </tr>
+                          <tr>
+                            <td>9</td>
+                            <td>0.03%</td>
+                          </tr>
+                        </tbody>
+                      </table>
 
                     <h2 class="section-heading">Code</h2>
                     <p>Details to the <a href="https://github.com/gwang16/DrBoom">simulation code</a> can be found here.</p>

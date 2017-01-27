@@ -1,4 +1,4 @@
-/* Style the Image Used to Trigger the Modal */
+/* Add zoomed image */
 #myImg {
     border-radius: 5px;
     cursor: pointer;
@@ -83,4 +83,16 @@
     .modal-content {
         width: 100%;
     }
+}
+
+/* Add centered tables */
+.table-striped {
+    width: 50%; 
+    text-align: center; 
+    margin: 0px auto; 
+}
+
+    
+.table-striped th {
+    text-align:center;
 }
