@@ -22,12 +22,8 @@
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!-- Custom imports -->
+    <link href="../css/my_css.css" rel="stylesheet">
 
 </head>
 
@@ -85,31 +81,51 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <p>I recenly read a blog post that inspired me to start this project. It suggested the usage of using reactions to facebook pages to determine the general emotions that the readers have on various news outlets, such as CNN and FOX. I thought it would be interesting to proxy the popularity of various eSports titles and their trends by looking at the average number of reactions each post gets over time.</p>
+                    <p>I recenly read a blog post that inspired me to start this project. It suggested the usage of using facebook reactions (Likes, Loves, Wows, Angers, etc.) to determine the general emotions that the readers have on various news outlets, such as CNN and FOX. I thought it would be interesting to proxy the popularity of various eSports titles and their trends by looking at the total monthly reactions to their facebook pages over time.</p>
 
                     <h2 class="section-heading">Methodology</h2>
                     <p>
-                    I used a python implementation of facebook post scrapper to obtain the number of reactions to each post for a page, and then performed data cleaning and visualization in R using ggplot.</p>
+                    I used a python implementation of facebook post scrapper to obtain statistics for each post on a page. Data analysis and visualization were done in R.</p>
 
-                    <h2 class="section-heading">Results</h2>
+                    <h2 class="section-heading">Monthly Reactions</h2>
                     <p> 
-                    The following plots include results for Hearthstone, LoL, Overwatch, Starcraft, and WoW.
+                    The following plots show the total number of monthly reactions for some of the largest gaming titles: Hearthstone, LoL, Overwatch, Starcraft, and WoW. 
                     </p>
 
-                    <img class="img-responsive" src="../documents/FB_trends/plotHearthstone_facebook_statuses.png" alt="">
-                    <span class="caption text-muted">Hearthstone.</span><BR>
+                    <img class="img-responsive" src="../documents/FB_trends/plot1_Hearthstone_facebook_statuses.png" alt="">
+                    <span class="caption text-muted">Hearthstone.</span><BR><BR>
 
-                    <img class="img-responsive" src="../documents/FB_trends/plotleagueoflegends_facebook_statuses.png" alt="">
-                    <span class="caption text-muted">League of Legends.</span><BR>
+                    <img class="img-responsive" src="../documents/FB_trends/plot1_leagueoflegends_facebook_statuses.png" alt="">
+                    <span class="caption text-muted">League of Legends.</span><BR><BR>
 
-                    <img class="img-responsive" src="../documents/FB_trends/plotPlayOverwatch_facebook_statuses.png" alt="">
-                    <span class="caption text-muted">Overwatch.</span><BR>
+                    <img class="img-responsive" src="../documents/FB_trends/plot1_PlayOverwatch_facebook_statuses.png" alt="">
+                    <span class="caption text-muted">Overwatch.</span><BR><BR>
 
-                    <img class="img-responsive" src="../documents/FB_trends/plotStarCraft_facebook_statuses.png" alt="">
-                    <span class="caption text-muted">Starcraft.</span><BR>
+                    <img class="img-responsive" src="../documents/FB_trends/plot1_StarCraft_facebook_statuses.png" alt="">
+                    <span class="caption text-muted">Starcraft.</span><BR><BR>
 
-                    <img class="img-responsive" src="../documents/FB_trends/plotWarcraft_facebook_statuses.png" alt="">
+                    <img class="img-responsive" src="../documents/FB_trends/plot1_Warcraft_facebook_statuses.png" alt="">
                     <span class="caption text-muted">World of Warcraft.</span><BR>
+
+                    <h2 class="section-heading">Player Approval Index</h2>
+                    <p> 
+                    The following plots show the Approval Index for each of the above titles. This index is calculated as the positive emotions (loves, wows, hahas, sads) divided by all emotions (loves, wows, hahas, sads, angrys). We exclude likes from our calculation because it is assumed to be a neutral emotion. Note that this emotions feature was added to facebook in February 2016, so the timeseries below have shortened dates relative to the plots above.
+                    </p>
+
+                    <img class="img-responsive" src="../documents/FB_trends/plot2_Hearthstone_facebook_statuses.png" alt="">
+                    <span class="caption text-muted">Hearthstone.</span><BR><BR>
+
+                    <img class="img-responsive" src="../documents/FB_trends/plot2_leagueoflegends_facebook_statuses.png" alt="">
+                    <span class="caption text-muted">League of Legends.</span><BR><BR>
+
+                    <img class="img-responsive" src="../documents/FB_trends/plot2_PlayOverwatch_facebook_statuses.png" alt="">
+                    <span class="caption text-muted">Overwatch.</span><BR><BR>
+
+                    <img class="img-responsive" src="../documents/FB_trends/plot2_StarCraft_facebook_statuses.png" alt="">
+                    <span class="caption text-muted">Starcraft.</span><BR><BR>
+
+                    <img class="img-responsive" src="../documents/FB_trends/plot2_Warcraft_facebook_statuses.png" alt="">
+                    <span class="caption text-muted">World of Warcraft.</span><BR><BR>
 
                 </div>
             </div>
@@ -175,6 +191,9 @@
 
     <!-- Theme JavaScript -->
     <script src="../js/clean-blog.min.js"></script>
+
+    <!-- Custom Imports -->
+    <script src="../js/my_js.js"></script>
 
 </body>
 
