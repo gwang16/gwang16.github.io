@@ -1,11 +1,20 @@
 /* Add zoomed image */
-#myImg {
+/*#myImg {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
 }
 
 #myImg:hover {opacity: 0.7;}
+
+*/
+.img-responsive {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.myImg:hover {opacity: 0.7;}
 
 /* The Modal (background) */
 .modal {

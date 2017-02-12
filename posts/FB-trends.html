@@ -81,31 +81,32 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <p>I recenly read a blog post that inspired me to start this project. It suggested the usage of using facebook reactions (Likes, Loves, Wows, Angers, etc.) to determine the general emotions that the readers have on various news outlets, such as CNN and FOX. I thought it would be interesting to proxy the popularity of various eSports titles and their trends by looking at the total monthly reactions to their facebook pages over time.</p>
+                    <p>I recenly read a blog post that inspired me to start this project. It used facebook reactions (Likes, Loves, Wows, Angers, etc.) to determine general attitudes on various news outlets, such as CNN and FOX. I thought it would be interesting to proxy the popularity of various eSports titles and their trends by looking at the total monthly reactions to their facebook pages over time.</p>
 
                     <h2 class="section-heading">Methodology</h2>
                     <p>
-                    I used a python implementation of facebook post scrapper to obtain statistics for each post on a page. Data analysis and visualization were done in R.</p>
+                    I used a Python script to interact with Facebook's API to obtain statistics for each post on a specific page. Data analysis and visualization were done in R.</p>
 
                     <h2 class="section-heading">Monthly Reactions</h2>
                     <p> 
-                    The following plots show the total number of monthly reactions for some of the largest gaming titles: Hearthstone, LoL, Overwatch, Starcraft, and WoW. 
+                    The following plots show the total number of monthly reactions for Hearthstone, LoL, Overwatch, Starcraft, and WoW. The size of the nodes represents number of posts in that month.
                     </p>
 
                     <img class="img-responsive" src="../documents/FB_trends/plot1_Hearthstone_facebook_statuses.png" alt="">
-                    <span class="caption text-muted">Hearthstone.</span><BR><BR>
+                    <span class="caption text-muted">Hearthstone has an unexpected low number of Facebook following, given how big its competitive scene is.</span><BR><BR>
 
                     <img class="img-responsive" src="../documents/FB_trends/plot1_leagueoflegends_facebook_statuses.png" alt="">
-                    <span class="caption text-muted">League of Legends.</span><BR><BR>
+                    <span class="caption text-muted">League has been in a lull since 2014, though the most recent Worlds definitely brough back interest.</span><BR><BR>
 
                     <img class="img-responsive" src="../documents/FB_trends/plot1_PlayOverwatch_facebook_statuses.png" alt="">
-                    <span class="caption text-muted">Overwatch.</span><BR><BR>
+                    <span class="caption text-muted">Overwatch has been performing extremely well since launch</span><BR><BR>
 
                     <img class="img-responsive" src="../documents/FB_trends/plot1_StarCraft_facebook_statuses.png" alt="">
-                    <span class="caption text-muted">Starcraft.</span><BR><BR>
+                    <span class="caption text-muted">Could this be the come back for Starcraft?</span><BR><BR>
+
 
                     <img class="img-responsive" src="../documents/FB_trends/plot1_Warcraft_facebook_statuses.png" alt="">
-                    <span class="caption text-muted">World of Warcraft.</span><BR>
+                    <span class="caption text-muted">Legion was definitely a successful exapansion in terms of generating interest.</span><BR>
 
                     <h2 class="section-heading">Player Approval Index</h2>
                     <p> 
@@ -113,19 +114,29 @@
                     </p>
 
                     <img class="img-responsive" src="../documents/FB_trends/plot2_Hearthstone_facebook_statuses.png" alt="">
-                    <span class="caption text-muted">Hearthstone.</span><BR><BR>
+                    <span class="caption text-muted">Hearthstone had a rough year in terms of satisfying its players, including making Tyrande a Twitch Prime exclusive, a Heroic brawl that leaves out new players, and the current anti-fun Patches meta.</span><BR><BR>
 
                     <img class="img-responsive" src="../documents/FB_trends/plot2_leagueoflegends_facebook_statuses.png" alt="">
-                    <span class="caption text-muted">League of Legends.</span><BR><BR>
+                    <span class="caption text-muted">League has been doing well over the past year, only with a few minor hiccups.</span><BR><BR>
 
                     <img class="img-responsive" src="../documents/FB_trends/plot2_PlayOverwatch_facebook_statuses.png" alt="">
-                    <span class="caption text-muted">Overwatch.</span><BR><BR>
+                    <span class="caption text-muted">Overwatch is doing Overwatch things</span><BR><BR>
 
                     <img class="img-responsive" src="../documents/FB_trends/plot2_StarCraft_facebook_statuses.png" alt="">
-                    <span class="caption text-muted">Starcraft.</span><BR><BR>
+                    <span class="caption text-muted">Starcraft's upcoming change to DT's wasn't well received</span><BR><BR>
 
                     <img class="img-responsive" src="../documents/FB_trends/plot2_Warcraft_facebook_statuses.png" alt="">
-                    <span class="caption text-muted">World of Warcraft.</span><BR><BR>
+                    <span class="caption text-muted">Last year was a great year for WoW, culminating in the release of the Legion expansion</span><BR><BR>
+
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+                      <!-- The Close Button -->
+                      <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+                      <!-- Modal Content (The Image) -->
+                      <img class="modal-content" id="img01">
+                      <!-- Modal Caption (Image Text) -->
+                      <div id="caption"></div>
+                    </div>
 
                 </div>
             </div>
