@@ -85,18 +85,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <p>The pick-ban phase in League of Legends has always been an interesting mini-game. Given a 100+ champion pool, the vast combination of team composition provides a dynamic and challenging phase of the game. As the LoL moves to a 10-champion ban mode in the future, the complexity of the problem also increases. The purpose of this exercise is to attempt to facilitate the decision making process behind the pick-ban phase using statistics.</p>
+                    <p>The pick-ban phase in League of Legends has always been an interesting mini-game. With over 100 champions to choose from, the vast combination of team composition provides a dynamic and challenging phase of the game. As League moves to a 10-champion ban mode in the future, the complexity of the problem also increases. The purpose of this exercise is to use statistics to facilitate the decision making process behind the pick-ban phase.</p>
 
                     
                     <h2 class="section-heading">Demo</h2>
-                    <p><a href="http://gwang16.ocpu.io/PickBan/www">Demo</a> and additional details can be found here.</p>
+                    <p>Demo and additional details can be found <a href="http://gwang16.ocpu.io/PickBan/www">here</a>.</p>
                     
                     <img class="img-responsive" src="../img/pick-ban-demo.jpg" alt="">
                     
                     <span class="caption text-muted">When the opponent team first picks Ryze, we should consider playing a team comp with Vi or Wukong.</span>
 
                     <h2 class="section-heading">Data</h2>
-                    <p>In the current build, historical data consists of 10,000 games obtained from Riot API as of patch 5.13. I'm in the process of updating this process so that the model automatically recalibrates with the latest data every month. Ideally, the model should be able to filter by different game modes, player ranks, game time, and other attributes.
+                    <p>In the current build, data consists of 10,000 games obtained from Riot API as of patch 5.13. In future versions, the model would automatically recalibrate with the latest API pull every month. Future versions of the model would also allow for filters such as game mode, player rank, game length, etc.
 
                     <blockquote>In building a model, data takes up 80% of the time, but gets 20% of the fame.</blockquote>
 
@@ -104,9 +104,9 @@
 
                     <p>The general methodology used in rank ordering champions is as follows. </p>
                     <ol>
-                      <li>Filter the data set so that it includes all games (identified by gameid) with champions that have been picked by the two teams.</li>
-                      <li>Filter the data set so that it includes all opponent champions on one team, and all friendly champions on the opposite team.</li>
-                      <li>Calculate win rate per champion in the filtered data set.</li>
+                      <li>Select all games (identified by gameid) that contain the superset of champions from both teams.</li>
+                      <li>Select all games that contain all opponent champions on one team, and all friendly champions on the opposite team.</li>
+                      <li>Calculate win rate per champion in the resulting set of games.</li>
                     </ol>
 
                 </div>
